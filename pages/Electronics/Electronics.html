@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Collection</title>
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* प्रीमियम डार्क थीम लुक */
+            color: #f8fafc;
+            padding-bottom: 60px;
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            padding: 25px 8% 10px 8%;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #38bdf8; /* इलेक्ट्रॉनिक थीमसाठी स्काय ब्लू हायलाईट */
+        }
+
+        /* Header Styling */
+        .products-header {
+            text-align: center;
+            padding: 10px 8% 40px 8%;
+        }
+
+        .products-header h1 {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .products-header h1 span {
+            color: #38bdf8;
+        }
+
+        .products-header p {
+            color: #94a3b8;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        /* 4-Column Responsive Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            padding: 0 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Premium Electronic Card Container */
+        .product-card {
+            background-color: #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #334155;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.2);
+            border-color: #38bdf8;
+        }
+
+        /* Fixed Image Settings */
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background-color: #0f172a;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* इलेक्ट्रॉनिक्स गॅजेट्स पूर्ण दिसण्यासाठी contain वापरले आहे */
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        /* Product Info Typography */
+        .product-info {
+            padding: 22px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            background-color: #1e293b;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Modern Price Styling */
+        .price {
+            font-size: 21px;
+            color: #38bdf8;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: #64748b;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+
+        /* Techy Full-Width 'Buy Now' Button */
+        .cart-btn {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .cart-btn:hover {
+            background-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Link Customization */
+        .cart-btn a {
+            color: #ffffff ;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .cart-btn:hover a {
+            color: #0f172a !important; /* होव्हर केल्यावर अक्षरे गडद होतील */
+            font-weight: 700;
+        }
+
+        /* Mobile Friendly */
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+                padding: 0 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="../../index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <header class="products-header">
+        <h1>Tech & Electronics <span>Gadgets</span></h1>
+        
+    </header>
+
+    <section class="products-grid">
+        
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=500&auto=format&fit=crop" alt="Smartphone">
+            </div>
+            <div class="product-info">
+                <h3>Flagship Smartphone 5G</h3>
+                <p class="price">₹29,999 <span class="old-price">₹39,999</span></p>
+                <button class="cart-btn"><a href="../../payment/payment.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop" alt="Headphones">
+            </div>
+            <div class="product-info">
+                <h3>Wireless ANC Headphones</h3>
+                <p class="price">₹2,499 <span class="old-price">₹4,999</span></p>
+                <button class="cart-btn"><a href="../../payment/payment.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop" alt="Smartwatch">
+            </div>
+            <div class="product-info">
+                <h3>Fitness Smartwatch v2</h3>
+                <p class="price">₹1,999 <span class="old-price">₹3,999</span></p>
+                <button class="cart-btn"><a href="../../payment/payment.html">Buy Now</a></button>
+            </div>
+        </div>
+
+
+    </section>
+
+</body>
+</html>
